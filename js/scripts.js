@@ -17,21 +17,6 @@ let pokemonList = [
 	},
 ];
 
-for (let i = 0; i < pokemonList.length; i++) {
-	// created a 'for' loop. initialization: let i = 0; condition: i<pokemonList.lenght; action: i++;
-	if (pokemonList[i].height >= 1.0) {
-		document.write(
-			pokemonList[i].name +
-				" (height: " +
-				pokemonList[i].height +
-				") - Wow, that's big! <br> "
-		); // conditional set up so only one Pokémon has the label “Wow, that’s big!”
-	} else {
-		document.write(
-			pokemonList[i].name + " (height: " + pokemonList[i].height + ") <br> "
-		);
-	}
-}
-// 'else' clause is added to make additional statement
-// pokemon's height is written next to it's name by use of a 'string'
-// adding the <br> HTML element to display the text below/new line
+pokemonList.forEach(function (character) {
+	console.log(character.name + height + type);
+});
