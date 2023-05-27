@@ -33,7 +33,7 @@ body {
     background-color:  #3466AF;
     }    
 
-.button-class {
+/* .button-class {
    background-color: rgba(66, 64, 64, 0.932);
    border: white solid 1px;
    color: white;
@@ -46,12 +46,12 @@ body {
    cursor: pointer;
    border-radius: 6px;
    transition-duration: 0.4s;
-}
+} */
 
-.button-class:hover {
+/* .button-class:hover {
   background-color: rgb(155, 27, 27);
   color: white;
-}
+} */
 
 ul {
     list-style-type: none;

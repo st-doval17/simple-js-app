@@ -16,7 +16,7 @@ let pokemonRepository = (function () {
 		let modal = document.createElement("div");
 		modal.classList.add("modal");
 
-		let closeButtonElement = document.createElement("button");
+		let closeButtonElement = document.createElement("btn-secondary");
 		closeButtonElement.classList.add("modal-close");
 		closeButtonElement.innerText = "Close";
 		closeButtonElement.addEventListener("click", hideModal);
@@ -77,10 +77,11 @@ let pokemonRepository = (function () {
 	function addListItem(pokemon) {
 		let pokemonList = document.querySelector(".pokemon-list");
 		let listPokemon = document.createElement("li");
-		let button = document.createElement("button");
+		pokemonList.classList.add("list-group-item");
+		let button = document.createElement("btn");
 
 		button.innerText = pokemon.name;
-		button.classList.add("button-class");
+		button.classList.add("btn-primary");
 		listPokemon.appendChild(button);
 		pokemonList.appendChild(listPokemon);
 		button.addEventListener("click", () => showDetails(pokemon));
