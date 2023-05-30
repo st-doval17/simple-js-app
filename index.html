@@ -6,6 +6,12 @@
 		<title>Simple JS App</title>
 		<link rel="stylesheet" href="css/styles.css" />
 
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous" />
+
 		<!-- the following is the google font code used -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,19 +29,62 @@
 
 	<body>
 		<header>
-			<img src="img/pokeball.png" alt="pokeball" class="pokeball" />
 			<h1></h1>
 			<img src="img/pokeball.png" alt="pokeball" class="pokeball" />
 			<nav class="nav">
 				<a class="nav-link" href="#">Home</a>
 				<a class="nav-link" href="#">About</a>
-				<a class="nav-link" href="#">Search</a>
+				<a class="nav-link" href="#"
+					><input
+						class="search-bar"
+						type="search"
+						placeholder="Search"
+						aria-label="Search"
+				/></a>
 			</nav>
 		</header>
 
 		<ul class="pokemon-list list-group"></ul>
-		<button id="show-modal" class="show-modal">Info</button>
-		<div id="modal-container"></div>
+
+		<button
+			type="button"
+			class="btn btn-primary"
+			data-toggle="modal"
+			data-target="#exampleModal">
+			Info
+		</button>
+
+		<div
+			class="modal fade show"
+			id="exampleModal"
+			tabindex="-1"
+			role="dialog"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<button
+							type="button"
+							class="close"
+							data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">X</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<img class="pokemon.imageUrl" alt="Result image of Pokemon" />
+						<p class="pokemon-height"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">
+							Close
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<script src="js/promise-polyfill.js"></script>
 		<script src="js/fetch-polyfill.js"></script>

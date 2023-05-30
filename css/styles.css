@@ -1,5 +1,5 @@
 header {
-  background-color: #96adcf73;
+  background-color: #486796;
   text-align: center;
   padding: 16px 32px;
   display: flex;
@@ -15,11 +15,6 @@ h1 {
     text-align: center;
 }
 
-.pokeball {
-  display: inline-block;
-  height: 8em;
-}
-
 .nav {
   float: right;
   color: #FFCB05;
@@ -28,7 +23,7 @@ h1 {
   text-decoration: none;
   font-size: 17px;
   position: absolute;
-  right: 50px;
+  right: 30px;
   top: 20px;
 }
 
@@ -36,6 +31,10 @@ h1 {
   text-decoration: none;
   color: #FFCB05;
   padding: 15px 15px;
+}
+
+a {
+  font-size: 20px;
 }
 
 p {
@@ -50,25 +49,14 @@ body {
     background-color:  #3466AF;
     }    
 
-/* .button-class {
-   background-color: rgba(66, 64, 64, 0.932);
-   border: white solid 1px;
-   color: white;
-   padding: 16px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 16px;
-   margin: 4px 4px;
-   cursor: pointer;
-   border-radius: 6px;
-   transition-duration: 0.4s;
-} */
+.search-bar  {
+  border:  #CC0000 solid 2px;
+  border-radius: 18px;
+  height: 25px;
+  width: 140px;
+  
+}
 
-/* .button-class:hover {
-  background-color: rgb(155, 27, 27);
-  color: white;
-} */
 
 ul {
     list-style-type: none;
@@ -128,18 +116,12 @@ ul {
   text-decoration: underline;
 }
 
-.modal h1 {
-  margin-top: 0;
-}
-
-.modal p {
-  margin-bottom: 10px;
-}
-
 img {
   width: 250px; 
 }
 
 .pokeball {
   width: 160px;
+  display: inline-block;
+  height: 8em;
 }
