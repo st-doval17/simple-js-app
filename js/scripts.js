@@ -37,7 +37,7 @@ let pokemonRepository = (function () {
 		button.innerText = pokemon.name;
 		button.classList.add("btn-primary", "btn");
 
-		listPokemon.appendChild(pokemon);
+		listPokemon.appendChild(button);
 		pokemonList.appendChild(listPokemon);
 		button.addEventListener("click", () => showDetails(pokemon));
 	}
@@ -92,7 +92,7 @@ let pokemonRepository = (function () {
 		let nameElement = $("<h2>" + pokemon.name + "</h2>");
 		let imageElement = $('<img class="modal-img" />');
 		imageElement.attr("src", pokemon.imageUrl);
-		let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
+		let heightElement = $("<p>" + "Height : " + pokemon.height + "</p>");
 
 		modalTitle.append(nameElement);
 		modalBody.append(imageElement);
