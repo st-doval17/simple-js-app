@@ -1,5 +1,5 @@
 // Header styling code
-let mainTitle = document.querySelector("h1");
+let mainTitle = document.querySelector(".myHeader");
 mainTitle.innerText = "List of Pokemon";
 console.log(mainTitle.innerText);
 
@@ -30,9 +30,13 @@ let pokemonRepository = (function () {
 		let pokemonList = document.querySelector(".pokemon-list");
 		let listPokemon = document.createElement("li");
 		pokemonList.classList.add("list-group-item");
-		let button = document.createElement("showModal");
 
+		let button = document.createElement("showModal");
+		button.setAttribute("data-target", "#pokemonModal");
+		button.setAttribute("data-toggle", "modal");
 		button.innerText = pokemon.name;
+		button.classList.add("btn-primary", "btn");
+
 		listPokemon.appendChild(pokemon);
 		pokemonList.appendChild(listPokemon);
 		button.addEventListener("click", () => showDetails(pokemon));
@@ -64,8 +68,8 @@ let pokemonRepository = (function () {
 				return response.json();
 			})
 			.then(function (details) {
-				pokemon.imageUrl = details.sprites.front_default;
-				pokemon.height = details.height;
+				item.imageUrl = details.sprites.front_default;
+				item.height = details.height;
 			})
 			.catch(function (e) {
 				console.error(e);
@@ -86,7 +90,7 @@ let pokemonRepository = (function () {
 		modalBody.empty();
 
 		let nameElement = $("<h2>" + pokemon.name + "</h2>");
-		let imageElement = $('<img class="modal-img"');
+		let imageElement = $('<img class="modal-img" />');
 		imageElement.attr("src", pokemon.imageUrl);
 		let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
 
