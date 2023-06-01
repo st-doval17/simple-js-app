@@ -31,6 +31,7 @@
 		<header>
 			<h1 class="myHeader"></h1>
 			<img src="img/pokeball.png" alt="pokeball" class="pokeball" />
+			<div class="sr-only">Drawing image of a pokeball under title</div>
 			<nav class="nav">
 				<a class="nav-link" href="#">Home</a>
 				<a class="nav-link" href="#">About</a>
@@ -44,15 +45,9 @@
 			</nav>
 		</header>
 
-		<ul class="pokemon-list list-group"></ul>
-
-		<button
-			type="button"
-			class="btn btn-primary"
-			data-toggle="modal"
-			data-target="#exampleModal">
-			Info
-		</button>
+		<div class="p-3 mb-2 bg-light text-dark">
+			<ul class="pokemon-list list-group"></ul>
+		</div>
 
 		<div
 			class="modal fade show"
@@ -64,7 +59,7 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<h2 class="modal-title" id="exampleModalLabel"></h2>
 						<button
 							type="button"
 							class="close"
@@ -86,6 +81,9 @@
 			</div>
 		</div>
 
+		<script src="js/promise-polyfill.js"></script>
+		<script src="js/fetch-polyfill.js"></script>
+
 		<script
 			src="https://code.jquery.com/jquery-3.3.1.min.js"
 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -99,8 +97,6 @@
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 			crossorigin="anonymous"></script>
 
-		<script src="js/promise-polyfill.js"></script>
-		<script src="js/fetch-polyfill.js"></script>
 		<script src="js/scripts.js"></script>
 	</body>
 </html>
