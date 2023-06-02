@@ -34,12 +34,13 @@
 			<div class="sr-only">Drawing image of a pokeball under title</div>
 			<nav class="nav">
 				<a class="nav-link" href="#">Home</a>
-				<a class="nav-link" href="#">About</a>
+				<a class="nav-link" href="#footer">About</a>
 				<a class="nav-link" href="#"
 					><input
 						class="search-bar"
 						type="search"
-						placeholder="Search"
+						id="query-details"
+						placeholder="Search..."
 						aria-label="Search"
 				/></a>
 			</nav>
@@ -57,7 +58,7 @@
 			aria-labelledby="exampleModalLabel"
 			aria-hidden="true">
 			<div class="modal-dialog" role="document">
-				<div class="modal-content">
+				<div class="modal-content p-3 mb-2 bg-light">
 					<div class="modal-header">
 						<h2 class="modal-title" id="exampleModalLabel"></h2>
 						<button
@@ -69,7 +70,9 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<img class="pokemon.imageUrl" alt="Result image of Pokemon" />
+						<img
+							class="pokemon.imageUrl img-fluid pokemon-img"
+							alt="Result image of Pokemon" />
 						<p class="pokemon-height"></p>
 					</div>
 					<div class="modal-footer">
@@ -80,6 +83,29 @@
 				</div>
 			</div>
 		</div>
+
+		<footer id="footer">
+			<p class="footer-text">
+				<br />
+				Made by G.S. <br />
+				June 2023 <br />
+				<br />
+				You can find me at:
+			</p>
+			<div class="footer-icons">
+				<a href="https://github.com/st-doval17" target="_blank">
+					<img src="img/github.svg" alt="github" class="social-media" />
+				</a>
+				<a
+					href="https://sandoval-portfolio.vercel.app/"
+					alt="portfolio website">
+					<img
+						src="img/globe_icon.svg"
+						alt="portfolio website"
+						class="portfolio-website" />
+				</a>
+			</div>
+		</footer>
 
 		<script src="js/promise-polyfill.js"></script>
 		<script src="js/fetch-polyfill.js"></script>
