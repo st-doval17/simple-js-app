@@ -1,129 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Simple JS App</title>
-		<link rel="stylesheet" href="css/styles.css" />
-		<link rel="icon" type="image/icon" href="img/pokeico.ico" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple JS App</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/icon" href="img/pokeico.ico" />
 
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-			crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous" />
 
-		<!-- the following is the google font code used -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Roboto+Condensed:wght@300&display=swap"
-			rel="stylesheet" />
-		<!-- end of font code -->
+    <!-- the following is the google font code used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet" />
+    <!-- end of font code -->
 
-		<style>
-			body {
-				font-family: "Darumadrop One", cursive;
-			}
-		</style>
-	</head>
+    <style>
+      body {
+        font-family: 'Darumadrop One', cursive;
+      }
+    </style>
+  </head>
 
-	<body>
-		<header>
-			<h1 class="myHeader"></h1>
-			<img src="img/pokeball.png" alt="pokeball" class="pokeball" />
-			<div class="sr-only">Drawing image of a pokeball under title</div>
-			<nav class="nav">
-				<a class="nav-link" href="#">Home</a>
-				<a class="nav-link" href="#footer">About</a>
-				<a class="nav-link" href="#"
-					><input
-						class="search-bar"
-						type="search"
-						id="query-details"
-						placeholder="Search..."
-						aria-label="Search"
-				/></a>
-			</nav>
-		</header>
+  <body>
+    <header>
+      <h1 class="myHeader"></h1>
+      <img src="img/pokeball.png" alt="pokeball" class="pokeball" />
+      <div class="sr-only">Drawing image of a pokeball under title</div>
+      <nav class="nav">
+        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#footer">About</a>
+        <div class="search-bar-container">
+          <input type="text" id="search-bar" placeholder="Search Pokemon" />
+          <ul id="suggestions"></ul>
+        </div>
+      </nav>
+    </header>
 
-		<div class="p-3 mb-2 bg-light text-dark">
-			<ul class="pokemon-list list-group"></ul>
-		</div>
+    <div class="p-3 mb-2 bg-light text-dark">
+      <ul class="pokemon-list list-group"></ul>
+    </div>
 
-		<div
-			class="modal fade show"
-			id="pokemonModal"
-			tabindex="-1"
-			role="dialog"
-			aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content p-3 mb-2 bg-light">
-					<div class="modal-header">
-						<h2 class="modal-title" id="exampleModalLabel"></h2>
-						<button
-							type="button"
-							class="close"
-							data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">X</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<img
-							class="pokemon.imageUrl img-fluid pokemon-img"
-							alt="Result image of Pokemon" />
-						<p class="pokemon-height"></p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal">
-							Close
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div
+      class="modal fade show"
+      id="pokemonModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content p-3 mb-2 bg-light">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel"></h2>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close">
+              <span aria-hidden="true">X</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img
+              class="pokemon.imageUrl img-fluid pokemon-img"
+              alt="Result image of Pokemon" />
+            <p class="pokemon-height"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<footer id="footer">
-			<p class="footer-text">
-				<br />
-				Made by G.S. <br />
-				June 2023 <br />
-				<br />
-				You can find me at:
-			</p>
-			<div class="footer-icons">
-				<a href="https://github.com/st-doval17" target="_blank">
-					<img src="img/github.svg" alt="github" class="social-media" />
-				</a>
-				<a
-					href="https://sandoval-portfolio.vercel.app/"
-					alt="portfolio website">
-					<img
-						src="img/globe_icon.svg"
-						alt="portfolio website"
-						class="portfolio-website" />
-				</a>
-			</div>
-		</footer>
+    <footer id="footer">
+      <p class="footer-text">
+        <br />
+        Made by G.S. <br />
+        June 2023 <br />
+        <br />
+        You can find me at:
+      </p>
+      <div class="footer-icons">
+        <a href="https://github.com/st-doval17" target="_blank">
+          <img src="img/github.svg" alt="github" class="social-media" />
+        </a>
+        <a
+          href="https://sandoval-portfolio.vercel.app/"
+          alt="portfolio website">
+          <img
+            src="img/globe_icon.svg"
+            alt="portfolio website"
+            class="portfolio-website" />
+        </a>
+      </div>
+    </footer>
 
-		<script src="js/promise-polyfill.js"></script>
-		<script src="js/fetch-polyfill.js"></script>
+    <script>
+      const searchBar = document.getElementById('search-bar');
+      const suggestionsList = document.getElementById('suggestions');
 
-		<script
-			src="https://code.jquery.com/jquery-3.3.1.min.js"
-			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			crossorigin="anonymous"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-			crossorigin="anonymous"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-			crossorigin="anonymous"></script>
+      // Add an event listener to the search input
+      searchBar.addEventListener('input', function () {
+        const searchText = searchBar.value.toLowerCase();
+        const filteredPokemon = pokemonRepository.getAll().filter((pokemon) => {
+          return pokemon.name.toLowerCase().includes(searchText);
+        });
 
-		<script src="js/scripts.js"></script>
-	</body>
+        // Clear previous suggestions
+        suggestionsList.innerHTML = '';
+
+        // Create and display new suggestions
+        filteredPokemon.forEach((pokemon) => {
+          const suggestionItem = document.createElement('li');
+          suggestionItem.textContent = pokemon.name;
+          suggestionItem.classList.add('suggestion-item');
+
+          // Handle click on a suggestion
+          suggestionItem.addEventListener('click', function () {
+            searchBar.value = pokemon.name; // Fill the input with the selected suggestion
+            suggestionsList.innerHTML = ''; // Clear suggestions
+          });
+
+          suggestionsList.appendChild(suggestionItem);
+        });
+      });
+    </script>
+
+    <script src="js/promise-polyfill.js"></script>
+    <script src="js/fetch-polyfill.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+
+    <script src="js/scripts.js"></script>
+  </body>
 </html>
